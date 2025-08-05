@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: #eee;
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            background-image: url("Mainback.png"); 
+            background-size: cover;               /* 背景图铺满整个页面 */
+            background-repeat: no-repeat;         /* 不重复 */
+            background-position: center center;   /* 居中显示 */
+        }
+        
+        .top {
+            display: flex;
+            height: 12%;
+            align-items: center;
+            padding: 0 20px;
+            background-color: rgba(255, 255, 255, 0); 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .bottom {
+            display: flex;
+            flex-direction: column;
+            height: 88%;
+        }
+
+        .bottom-left1,
+        .bottom-left2,
+        .bottom-left3 {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .bottom-left1 {
+            position: relative;
+            height: 30%;
+            background-color: rgba(255, 255, 255, 0); 
+            font-size: 100px;        /* 设置字体大小 */
+            color: white;           /* 设置字体颜色 */
+        }
+
+        .bottom-left1 > span {
+            position: absolute;
+            top: 80px;      /* 距离容器顶部80px */
+            left: 100px;    /* 距离容器左侧100px */
+        }
+
+        .bottom-left2 {
+            position: relative;
+            height: 30%;
+            background-color: rgba(255, 255, 255, 0); 
+            font-size: 36px;        /* 设置字体大小 */
+            color: white;
+        }
+
+        .bottom-left2 > span {
+            position: absolute;
+            top: 120px;     /* 距离容器顶部120px */
+            left: 100px;    /* 距离容器左侧100px */
+        }
+
+        .bottom-left3 {
+            position: relative;
+            height: 40%;
+            background-color: rgba(255, 255, 255, 0); 
+            font-size: 24px;        /* 设置字体大小 */
+            color: white;
+        }
+
+        .bottom-left3 > span {
+            position: absolute;
+            top: 30px;      /* 距离容器顶部30px */
+            left: 100px;
+            width: 700px;   /* 设置宽度，超出自动换行 */
+            text-align: justify; /* 文本两端对齐 */
+        }
+
+        .word-top, .word-special {
+            margin-right: 30px;
+            width: 10%;
+        }
+
+        .word-special {
+            position: relative;
+        }
+
+        .top .word-top:first-child {
+            margin-left: 840px;
+        }
+
+        /* 导航链接样式 */
+        .word-top a, .word-special a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: all 0.3s;
+            display: inline-block;
+            font-size: 20px;
+        }
+
+        /* 悬停效果 */
+        .word-top a:hover, .word-special a:hover {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        .triangle {
+            width: 0;
+            height: 0;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-right: 5px solid white;
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .rotate-down {
+            transform: rotate(-90deg);
+        }
+
+        .link-with-icon {
+            display: flex;
+            align-items: center;
+        }
+
+        .extra-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgb(135, 76, 76);
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            padding: 10px 0;
+            min-width: 180px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            z-index: 100;
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+            to { opacity: 1; transform: translateX(-50%) translateY(0); }
+        }
+
+        .extra-content a {
+            display: block;
+            padding: 8px 20px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .extra-content a:hover {
+            font-weight: bold;
+            color: white;
+            background-color: transparent; /* 防止背景色改变 */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top">
+        <div class="word-top"><a href="">首页</a></div>
+
+        <div class="word-special" onclick="toggleContent()">
+            <div class="link-with-icon">
+                <a href="javascript:void(0)">产品解析</a>
+                <div class="triangle" id="triangle"></div>
+            </div>
+            <div class="extra-content" id="extra-content">
+                <a href="">全流程机械植筋</a>
+                <a href="">铝模板恒温养护系统</a>
+            </div>
+        </div>
+
+        <div class="word-top"><a href="">研发团队</a></div>
+        <div class="word-top"><a href="">合作伙伴</a></div>
+        <div class="word-top"><a href="">关于我们</a></div>
+    </div>
+
+    <div class="bottom">
+        <div class="bottom-left1"><span>砼心联创</span></div>
+
+        <div class="bottom-left2"><span>Concrete Core Synergy</span></div>
+
+        <div class="bottom-left3">
+            <span>
+                我们是一支聚焦土木行业智能化转型的团队。怀揣着对行业的深刻洞察，
+                我们以智能科技为利器，深入挖掘土木施工中的痛点与难点，力求通过
+                智能化手段实现革新。我们不断探索智能化前沿科技，将其与土木行业
+                深度融合，旨在为行业带来更高效、更精准、更智能的解决方案，助力
+                土木行业在数字化浪潮中破浪前行，迈向高质量发展的新征程。
+            </span>
+        </div>
+    </div>
+
+    <script>
+        function toggleContent() {
+            const content = document.getElementById("extra-content");
+            const triangle = document.getElementById("triangle");
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            triangle.classList.toggle("rotate-down");
+        }
+
+        // 点击页面其他区域关闭下拉菜单
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.word-special')) {
+                const content = document.getElementById("extra-content");
+                const triangle = document.getElementById("triangle");
+                content.style.display = 'none';
+                triangle.classList.remove("rotate-down");
+            }
+        });
+    </script>
+</body>
+</html>
