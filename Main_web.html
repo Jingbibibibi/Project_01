@@ -28,6 +28,25 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
+        .partner1 {
+            width: 120px;   /* 宽度 */
+            height: auto;  /* 保持比例 */
+            margin-right: 10px; /* 右侧间距 */
+            }
+
+        .partner2 {
+            width: 100px;
+            height: auto;
+            margin-right: 20px;
+        }
+
+        .partner3 {
+            width: 100px;
+            height: auto;
+            margin-right: 490px;
+        }
+
+
         .bottom {
             display: flex;
             flex-direction: column;
@@ -141,13 +160,13 @@
             display: none;
             position: absolute;
             top: 100%;
-            left: 50%;
+            left: 40%;
             transform: translateX(-50%);
             background-color: rgb(135, 76, 76);
             border: 1px solid #ddd;
             border-radius: 30px;
             padding: 10px 0;
-            min-width: 180px;
+            min-width: 150px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             z-index: 100;
             animation: fadeIn 0.3s;
@@ -164,6 +183,7 @@
             color: white;
             text-decoration: none;
             transition: all 0.2s;
+            text-align: center;
         }
 
         .extra-content a:hover {
@@ -177,6 +197,9 @@
 <body>
 
     <div class="top">
+        <img src="hegongda.png" alt="河北工业大学" class="partner1">
+        <img src="baju.png" alt="中共八局" class="partner2">
+        <img src="jiazhida.png" alt="嘉智达" class="partner3">
         <div class="word-top"><a href="">首页</a></div>
 
         <div class="word-special" onclick="toggleContent()">
@@ -185,14 +208,14 @@
                 <div class="triangle" id="triangle"></div>
             </div>
             <div class="extra-content" id="extra-content">
-                <a href="">全流程机械植筋</a>
-                <a href="">铝模板恒温养护系统</a>
+                <a href="">智擎筋筑</a>
+                <a href="">智驭寒凝</a>
             </div>
         </div>
 
         <div class="word-top"><a href="">研发团队</a></div>
-        <div class="word-top"><a href="">合作伙伴</a></div>
-        <div class="word-top"><a href="">关于我们</a></div>
+        <div class="word-top"><a href="./">合作伙伴</a></div>
+        <div class="word-top"><a href="./About_us.html">关于我们</a></div>
     </div>
 
     <div class="bottom">
